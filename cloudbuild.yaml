@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/kubectl'
+- name: 'hashicorp/terraform'
   args: ['set', 'image', 'deployment/mydepl', 'my-image=gcr.io/my-project/myimage']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-east4-b'
