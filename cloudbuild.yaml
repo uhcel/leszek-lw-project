@@ -1,5 +1,5 @@
 steps:
 - name: 'hashicorp/terraform'
-  args: ['terraform init']
+  args: ['init']
 - name: 'hashicorp/terraform'
-  args: ['build', '-t', 'gcr.io/my-project-id/myimage', '.']
+  args: ['plan']
