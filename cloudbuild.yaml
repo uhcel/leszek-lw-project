@@ -1,0 +1,9 @@
+- name: 'hashicorp/terraform'
+  id: Test
+  args:
+  - 'terraform init'
+
+- name: 'hashicorp/terraform'
+  id: Test
+  args:
+  - 'terraform plan -out=terraform.ftplan'
