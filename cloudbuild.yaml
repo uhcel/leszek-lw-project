@@ -1,8 +1,8 @@
 steps:
-- name: 'hashicorp/terraform'
-  args: ['init']
-- name: 'hashicorp/terraform'
-  args: ['plan','-out=terraform.tfplan']
+- name: 'gcr.io/leszek-jinx-main/terraform-validator'
+  args: ['terraform init']
+- name: 'gcr.io/leszek-jinx-main/terraform-validator'
+  args: ['terraform plan','-out=terraform.tfplan']
 - name: 'gcr.io/leszek-jinx-main/terraform-validator'
   entrypoint: "/bin/bash"
   args: ['-c', 'terraform show -json terraform.tfplan > terraform.json']
