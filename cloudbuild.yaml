@@ -4,6 +4,6 @@ steps:
 - name: 'hashicorp/terraform'
   args: ['plan','-out=terraform.tfplan']
 - name: 'hashicorp/terraform'
-  args: ['show','-json terraform.plan', '> terraform.json']
+  args: ['show','-json terraform.plan > terraform.json']
 - name: 'gcr.io/leszek-jinx-main/terraform-validator'
   args: ['convert','terraform.json']
