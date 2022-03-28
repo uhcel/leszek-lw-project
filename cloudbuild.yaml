@@ -12,7 +12,7 @@ steps:
       - 'terraform.tfplan'
       - '|'
       - 'tee' 
-      - 'terraform.json'
+      - terraform.json
     name: hashicorp/terraform
   - args:
       - convert
