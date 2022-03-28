@@ -18,7 +18,8 @@ steps:
       - show
       - "-json"
       - terraform.tfplan
-      - "|tee /persistent_volume/terraform.json"
+      - "|tee" 
+      - /persistent_volume/terraform.json
     name: hashicorp/terraform
     volumes: 
       - 
