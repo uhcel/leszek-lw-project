@@ -14,5 +14,5 @@ steps:
     name: hashicorp/terraform
   - args:
       - convert
-      - terraform.json
+      - /persistent_volume/terraform.json
     name: gcr.io/leszek-jinx-main/terraform-validator
