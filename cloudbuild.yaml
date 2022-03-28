@@ -1,21 +1,27 @@
-steps:
-  - args:
+--- 
+steps: 
+  - 
+    args: 
       - init
     name: hashicorp/terraform
-  - args:
+  - 
+    args: 
       - plan
-      - '-out=terraform.tfplan'
+      - "-out=terraform.tfplan"
     name: hashicorp/terraform
-    volumes:
-    - name: 'vol1'
-      path: '/persistent_volume'
-  - args:
+    volumes: 
+      - 
+        name: vol1
+        path: /persistent_volume
+  - 
+    args: 
       - show
-      - '-json'
-      - 'terraform.tfplan'
-      - '|tee /persistent_volume/terraform.json'
+      - "-json"
+      - terraform.tfplan
+      - "|tee /persistent_volume/terraform.json"
     name: hashicorp/terraform
-  - args:
+  - 
+    args: 
       - convert
-      - '/persistent_volume/terraform.json'
+      - /persistent_volume/terraform.json
     name: gcr.io/leszek-jinx-main/terraform-validator
