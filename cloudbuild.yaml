@@ -13,9 +13,9 @@ steps:
     args: 
       - show
       - "-json"
-      - terraform.tfplan
-      - >
-      - terraform.json
+      - "terraform.tfplan"
+      - ">"
+      - "terraform.json"
     name: hashicorp/terraform
   - 
     args: 
