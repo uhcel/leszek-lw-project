@@ -9,6 +9,10 @@ steps:
       - plan
       - "-out=terraform.tfplan"
     name: hashicorp/terraform
+    volumes: 
+      - 
+        name: vol1
+        path: /persistent_volume
   - 
     args: 
       - show
@@ -16,8 +20,16 @@ steps:
       - terraform.tfplan
       - "|tee /persistent_volume/terraform.json"
     name: hashicorp/terraform
+    volumes: 
+      - 
+        name: vol1
+        path: /persistent_volume
   - 
     args: 
       - convert
       - /persistent_volume/terraform.json
     name: gcr.io/leszek-jinx-main/terraform-validator
+    volumes: 
+      - 
+        name: vol1
+        path: /persistent_volume
