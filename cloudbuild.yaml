@@ -1,24 +1,19 @@
---- 
-steps: 
-  - 
-    args: 
+steps:
+  - args:
       - init
     name: hashicorp/terraform
-  - 
-    args: 
+  - args:
       - plan
-      - "-out=terraform.tfplan"
+      - '-out=terraform.tfplan'
     name: hashicorp/terraform
-  - 
-    args: 
+  - args:
       - show
-      - "-json"
-      - "terraform.tfplan"
-      - ">"
-      - "terraform.json"
+      - '-json'
+      - terraform.tfplan
+      - '>'
+      - terraform.json
     name: hashicorp/terraform
-  - 
-    args: 
+  - args:
       - convert
       - terraform.json
     name: gcr.io/leszek-jinx-main/terraform-validator
