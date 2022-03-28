@@ -10,9 +10,7 @@ steps:
       - show
       - '-json'
       - 'terraform.tfplan'
-      - '|'
-      - tee
-      - 'terraform.json'
+      - |tee terraform.json
     name: hashicorp/terraform
   - args:
       - convert
