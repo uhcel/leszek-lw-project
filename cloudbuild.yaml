@@ -18,7 +18,8 @@ steps:
       - show
       - "-json"
       - terraform.tfplan
-      - "|tee gs://terraform-leszek/terraform.json"
+      - "|tee" 
+      - gs://terraform-leszek/terraform.json
     name: hashicorp/terraform
     volumes: 
       - 
