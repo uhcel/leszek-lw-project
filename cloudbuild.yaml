@@ -18,8 +18,7 @@ steps:
       - show
       - "-json"
       - terraform.tfplan
-      - "|tee" 
-      - /persistent_volume/terraform.json
+      - "|tee /persistent_volume/terraform.json"
     name: hashicorp/terraform
     volumes: 
       - 
@@ -28,7 +27,7 @@ steps:
   - 
     args: 
       - convert
-      - /persistent_volume/terraform.json
+      - "/persistent_volume/terraform.json"
     name: gcr.io/leszek-jinx-main/terraform-validator
     volumes: 
       - 
