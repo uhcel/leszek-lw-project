@@ -6,6 +6,9 @@ steps:
       - plan
       - '-out=terraform.tfplan'
     name: hashicorp/terraform
+    volumes:
+    - name: 'vol1'
+      path: '/persistent_volume'
   - args:
       - show
       - '-json'
