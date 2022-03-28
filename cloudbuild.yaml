@@ -1,4 +1,7 @@
 steps:
+ volumes:
+  - name: 'vol1'
+    path: '/persistent_volume'
   - args:
       - init
     name: hashicorp/terraform
@@ -10,9 +13,9 @@ steps:
       - show
       - '-json'
       - 'terraform.tfplan'
-      - '|tee /persistent_volume/terraform.json'
+      - '|tee /vol1/terraform.json'
     name: hashicorp/terraform
   - args:
       - convert
-      - /persistent_volume/terraform.json
+      - '/vol1/terraform.json'
     name: gcr.io/leszek-jinx-main/terraform-validator
